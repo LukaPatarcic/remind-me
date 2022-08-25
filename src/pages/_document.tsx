@@ -1,4 +1,4 @@
-import { Main, NextScript, Html, Head } from "next/document";
+import { Main, NextScript, Html, Head } from 'next/document';
 
 const MyDocument = () => {
     return (
