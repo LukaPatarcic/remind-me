@@ -1,10 +1,11 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { trpc } from "../utils/trpc";
+import type { NextPage } from 'next';
+
+import Head from 'next/head';
+
+import { trpc } from '../utils/trpc';
 
 const Home: NextPage = () => {
-    const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
-
+    const hello = trpc.useQuery(['example.hello', { text: 'from tRPC' }]);
     return (
         <>
             <Head>
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
             <div className="mx-auto flex max-w-3xl flex-col items-center justify-start space-y-4 sm:flex-row sm:items-end sm:justify-around sm:space-y-0">
                 <div className="w-full max-w-lg divide-y divide-layer-3">
                     <label className="block py-4">
-                        <div className="flex items-center space-x-4">
+                        <div className="flex h-full items-center space-x-4">
                             <input
                                 type="checkbox"
                                 name="inputName"
@@ -65,6 +66,29 @@ const Home: NextPage = () => {
                             elit. Elementum hac porttitor.
                         </p>
                     </label>
+                </div>
+                <div className="flex justify-center">
+                    <div className="timepicker form-floating relative mb-3 xl:w-96">
+                        <input
+                            type="text"
+                            className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+                            placeholder="Select a date"
+                        />
+                        <label
+                            htmlFor="floatingInput"
+                            className="text-gray-700"
+                        >
+                            Select a time
+                        </label>
+                        <button
+                            tabIndex={0}
+                            type="button"
+                            className="timepicker-toggle-button"
+                            data-mdb-toggle="timepicker"
+                        >
+                            <i className="fas fa-clock timepicker-icon"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </>
