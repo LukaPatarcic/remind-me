@@ -67,7 +67,7 @@ model VerificationToken {
 model Reminder {
     id Int @id @default(autoincrement())
     reminder String
-    DateTime DateTime
+    timestamp BigInt
     user User @relation(fields: [userId], references: [id])
     userId String
 }
